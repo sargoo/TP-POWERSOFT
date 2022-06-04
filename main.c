@@ -9,7 +9,12 @@
 int main()
 {
     int opcion = 0, ejercicio = 0;
-     while (opcion != ESC)
+    char verificarUsu[];
+    char usuEmpleado1["aguera"];
+    char usuEmpleado2["lochocki"];
+    char usuEmpleado3["tambascia"];
+    char usuEmpleado4["blanco"];
+    while (opcion != ESC)
     {
 
         imprimirTecho(ANCHO);
@@ -26,102 +31,30 @@ int main()
         switch(ejercicio)
         {
         case 1:
-            contarTitulo("1-Hacer una funcion que permita ingresar varios elementos a una pila, tanto como quiera el usuario. ");
-            ///cargarPila (&pila);
-            ///imprimirPila(pila);
+            contarTitulo("LOGUEO DE ADMIN");
+            contarTitulo("INGRESE NOMBRE DE USUARIO: ");
+            scanf("%s", &verificarUsu);
+            if(verificarUsu == usuEmpleado1 || verificarUsu == usuEmpleado2 || verificarUsu == usuEmpleado3 verificarUsu == usuEmpleado4)
+            {
+                contarTitulo("Usuario loguiado ok.");
+            }
+            else
+            {
+                contarTitulo("usuario no existe o incorrecto.");
+            }
             break;
 
         case 2:
             contarTitulo("2-Hacer una funcion que pase todos los elementos de una pila a otra.");
 
-            ///cargarPilaRandom(&pila, limite);
-            ///int superior = tope(&pila);
+
             contarTitulo("PILA: ");
             printf("\t\t\t\t\t\t");
-            ///imprimirPila(pila);
-            ///pasarPila (&pila, &otra);
+
             contarTitulo("OTRA PILA: ");
             printf("\t\t\t\t\t\t");
-            ///imprimirPila(otra);
-            ///pasarPila (&otra, &pila);
-            break;
-
-        case 3:
-            contarTitulo("3-Hacer una funcion que pase todos los elementos de una pila a otra, pero conservando el orden.");
-            ///cargarPilaRandom(&pila, limite);
-            contarTitulo("PILA: ");
-            printf("\t\t\t\t\t\t");
-            ///imprimirPila(pila);
-            ///pasarPilaIgual (&pila, &otra);
-            contarTitulo("OTRA: ");
-            printf("\t\t\t\t\t\t");
-            ///imprimirPila(pila);
-            break;
-
-        case 4:
-            contarTitulo("4. Hacer una funcion que encuentre el menor elemento de una pila y lo retorna.");
-            contarTitulo("La misma debe eliminar ese dato de la pila.");
-            ///cargarPilaRandom(&pila, limite);
-            printf("\t\t\t\t\t\t");
-            ///imprimirPila(pila);
-            ///menor = encontrarMenor (&pila);
-            contarTitulo("EL elemento menor de la pila es: ");
-            ///printf("\t\t\t\t\t\t\t%i\n", menor);
-            contarTitulo("PILA SIN EL MENOR ELEMENTO: ");
-            printf("\t\t\t\t\t\t");
-            ///imprimirPila(pila);
 
             break;
-
-        case 5:
-            contarTitulo("Hacer una funcion que pase los elementos de una pila a otra, de manera que se genere una nueva pila ordenada.");
-            contarTitulo(" Usar la funcion del ejercicio 4. (Ordenamiento por seleccion)");
-            ///cargarPilaRandom(&pila, limite);
-            contarTitulo("PILA ANTES DE LA ORDENACION: ");
-            printf("\t\t\t\t\t\t");
-            ///imprimirPila(pila);
-            ///apilarOrdenado(&pila);
-            contarTitulo("PILA DESPUES DE LA ORDENACION: ");
-            printf("\t\t\t\t\t\t");
-            ///imprimirPila(pila);
-            break;
-
-        case 6:
-            contarTitulo("6. Hacer una funcion que inserta en una pila ordenada un nuevo elemento, conservando el orden de esta. ");
-            ///cargarPilaRandom(&pila, limite);
-            ///insertarElementoEnOrdenada(&pila);
-            printf("\t\t\t\t\t\t");
-            ///imprimirPila(pila);
-            break;
-
-        case 7:
-            contarTitulo("7. Hacer una funcion que pase los elementos de una pila a otra, de manera que se genere una nueva pila ordenada.");
-            contarTitulo("Usar la funcion del ejercicio 6.  (Ordenamiento por insercion).");
-            ///cargarPilaRandom(&pila, limite);
-            contarTitulo("PILA -PILA-: ");
-            printf("\t\t\t\t\t\t");
-            ///imprimirPila(pila);
-            ///pasarPilaDeMenorAMayor (&pila, &otra);
-            contarTitulo("PILA -OTRA-: ");
-            printf("\t\t\t\t\t\t");
-            ///imprimirPila(otra);
-            ///pasarPila(&otra, &pila);
-            break;
-
-        case 8:
-            contarTitulo("8- Hacer una funcion que sume y retorne los dos primeros elementos de una pila (tope y anterior),");
-            contarTitulo(" sin alterar su contenido. ");
-            ///cargarPilaRandom(&pila, limite);
-            printf("\t\t\t\t\t\tPILA : \n");
-            printf("\t\t\t\t\t");
-            ///imprimirPila(pila);
-            ///suma = sumarElementos (pila);
-            ///printf("\n \t\t\t\t\t\tLA SUMA DE LOS VALORES  es: %i \n", suma);
-            break;
-
-
-
-
 
         default:
             printf(" EJERCICIO NO DISPONILE.\n");
