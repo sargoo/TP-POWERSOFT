@@ -1,68 +1,111 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <string.h>
+#include "centrarTitulos.h"
+#include "stEmpleados.h"
+#define ARCHI_EMPLEADOS "empleados.dat"
+
 #define ESC 27
 #define ANCHO 118
 #define DIM 50
 
 
+void cargarArchivoEmpleado(char nombreArchivo[]);
+void mostrarArchivoEmpleado(char nombreArchivo[]);
+
 int main()
 {
-    int opcion = 0, ejercicio = 0;
-    char verificarUsu[];
-    char usuEmpleado1["aguera"];
-    char usuEmpleado2["lochocki"];
-    char usuEmpleado3["tambascia"];
-    char usuEmpleado4["blanco"];
+    int opcion = 0, eleccionLogueo = 0, eleccionOpcion = 0;
+    char verificarUsu[DIM];
+    char usuAdmin [DIM] = "admin";
+    char usuEmpleado1 [DIM] = "aguera";
+    char usuEmpleado2 [DIM] = "lochocki";
+    char usuEmpleado3 [DIM] = "tambascia";
+    char usuEmpleado4 [DIM] = "blanco";
     while (opcion != ESC)
     {
 
-        imprimirTecho(ANCHO);
-        contarTitulo("SISTEMA DE GESTION POWERSOFT");
-        imprimirTecho(ANCHO);
-        contarTitulo("INGRESE EL NUMERO DEL USUARIO CON EL QUE SE QUIERE LOGUEAR");
-        imprimirTecho(ANCHO);
-        contarTitulo("1- LOGUARSE COMO ADMIN.");
-        imprimirTecho(ANCHO);
-        contarTitulo("2- LOGUEARSE COMO EMPLEADO.");
-        imprimirTecho(ANCHO);
-        scanf("%i", &ejercicio);
+        ///imprimirTecho(ANCHO);
+        printf("SISTEMA DE GESTION POWERSOFT\n");
+        ///imprimirTecho(ANCHO);
+        printf("INGRESE EL NUMERO DEL USUARIO CON EL QUE SE QUIERE LOGUEAR\n");
+        ///imprimirTecho(ANCHO);
+        printf("1- LOGUARSE COMO ADMIN.\n");
+        ///imprimirTecho(ANCHO);
+        printf("2- LOGUEARSE COMO EMPLEADO.\n");
+        ///imprimirTecho(ANCHO);
+        scanf("%i", &eleccionLogueo);
         system("cls");
-        switch(ejercicio)
+        switch(eleccionLogueo)
         {
         case 1:
-            contarTitulo("LOGUEO DE ADMIN");
-            contarTitulo("INGRESE NOMBRE DE USUARIO: ");
+            printf("LOGUEO DE ADMIN\n");
+            printf("INGRESE NOMBRE DE USUARIO: \n");
             scanf("%s", &verificarUsu);
-            if(verificarUsu == usuEmpleado1 || verificarUsu == usuEmpleado2 || verificarUsu == usuEmpleado3 verificarUsu == usuEmpleado4)
+
+            if(strcmp(verificarUsu, usuAdmin) == 0 )
             {
-                contarTitulo("Usuario loguiado ok.");
+
+            printf("Usuario logueado ok.\n");
+            printf("ELIJA UNA OPCION:\n");
+            printf("1- ALTA DE EMPLEADO.\n");
+            printf("2- BAJA DE EMPLEADO.\n");
+            printf("3- MODIFICACION DE EMPLEADO.\n");
+            printf("4- CONSULTA DE EMPLEADO.\n");
+            scanf("%i", &eleccionOpcion);
             }
             else
             {
-                contarTitulo("usuario no existe o incorrecto.");
+                printf("usuario no existe o incorrecto.");
+            }
+
+
+
+            switch(eleccionOpcion)
+            {
+
+            case 1:
+
+                printf("1- ALTA DE EMPLEADO.\n");
+                cargarArchivoEmpleado(ARCHI_EMPLEADOS);
+                system("cls");
+                mostrarArchivoEmpleado(ARCHI_EMPLEADOS);
+
+
+                break;
+
+            default:
+
+                printf(" OPCION NO DISPONILE O INCORRECTA.\n");
+
+
             }
             break;
 
         case 2:
-            contarTitulo("2-Hacer una funcion que pase todos los elementos de una pila a otra.");
+            printf("LOGUEO DE EMPLEADO\n");
+            printf("INGRESE NOMBRE DE USUARIO: \n");
+            scanf("%s", &verificarUsu);
 
-
-            contarTitulo("PILA: ");
-            printf("\t\t\t\t\t\t");
-
-            contarTitulo("OTRA PILA: ");
-            printf("\t\t\t\t\t\t");
+            if(strcmp(verificarUsu, usuEmpleado1) == 0 || strcmp(verificarUsu, usuEmpleado2) == 0 || strcmp(verificarUsu, usuEmpleado3) == 0 || strcmp(verificarUsu, usuEmpleado4) == 0)
+            {
+                printf("Usuario logueado ok.");
+            }
+            else
+            {
+                printf("usuario no existe o incorrecto.");
+            }
 
             break;
 
         default:
-            printf(" EJERCICIO NO DISPONILE.\n");
+            printf(" OPCION NO DISPONILE O INCORRECTA.\n");
 
         }
-        printf("QUIERE VER OTRO EJERCICIO?\n");
-        printf("CUALQ.TECLA: SI.\n");
-        printf("ESC: NO.\n");
+        ///printf("QUIERE VER OTRO EJERCICIO?\n");
+        ///printf("CUALQ.TECLA: SI.\n");
+        ///printf("ESC: NO.\n");
         opcion = getch();
         system("cls");
     }
@@ -70,79 +113,47 @@ int main()
     return 0;
 }
 
-
-
-typedef struct
+void cargarArchivoEmpleado(char nombreArchivo[])
 {
-    int id;
-    char dni;
-    char apellido[DIM];
-    char nombre [DIM];
-    char direccion [DIM];
-    char telefono [DIM];
+    FILE *archi = fopen(nombreArchivo, "wb");
+    stEmpleado empleado;
+    char opcion;
 
-} stCliente;
-
-void contarTitulo(char titulo[])
-{
-    int anchoTotal = 118;
-    char* largo = titulo;
-    int contador = 0;
-    while (largo[contador] != 0)
+    if(archi)
     {
-        contador ++;
-    }
-    int espacio = anchoTotal - contador;
-
-    printf("||");
-    for(int i = 0; i < anchoTotal-4; i++)
-    {
-        printf(" ");
-    }
-    printf("||");
-    printf("\n");
-    printf("||");
-    for(int i = 0; i < (espacio/2)-2; i++)
-    {
-        printf(" ");
-    }
-
-    printf("%s", titulo);
-
-
-    if(espacio % 2 != 0)
-    {
-        for(int i = 0; i < (espacio/2)-1; i++)
+        do
         {
-            printf(" ");
+            system("cls");
+            empleado = cargarUnEmpleado();
+            fwrite(&empleado,sizeof(stEmpleado), 1, archi);
+            printf("ESC PARA SALIR O CUALQ. TECLA PARA CONTINUAR");
+            opcion = getch();
         }
+        while(opcion!=ESC);
     }
     else
     {
-        for(int i = 0; i < (espacio/2)-2; i++)
-        {
-            printf(" ");
-        }
-
+        printf("No se pudo abrir el archivo.");
     }
-
-    printf("||");
-    printf("\n");
-    printf("||");
-    for(int i = 0; i < anchoTotal-4; i++)
-    {
-        printf(" ");
-    }
-    printf("||");
-    printf("\n");
+    fclose(archi);
 }
 
-void imprimirTecho(int longitud)
+void mostrarArchivoEmpleado(char nombreArchivo[])
 {
+     FILE *archi = fopen(nombreArchivo, "rb");
+     stEmpleado e;
 
-    for(int i = 0; i < longitud; i++)
-    {
-        printf("=");
-    }
-    printf("\n");
+     if(archi)
+     {
+         while(fread(&e,sizeof(stEmpleado), 1, archi)> 0)
+         {
+             mostrarUnEmpleado(e);
+         }
+     }
+     fclose(archi);
+
 }
+
+
+
+
