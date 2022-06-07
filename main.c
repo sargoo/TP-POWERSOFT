@@ -26,38 +26,39 @@ int main()
     while (opcion != ESC)
     {
 
-        ///imprimirTecho(ANCHO);
-        printf("SISTEMA DE GESTION POWERSOFT\n");
-        ///imprimirTecho(ANCHO);
-        printf("INGRESE EL NUMERO DEL USUARIO CON EL QUE SE QUIERE LOGUEAR\n");
-        ///imprimirTecho(ANCHO);
-        printf("1- LOGUARSE COMO ADMIN.\n");
-        ///imprimirTecho(ANCHO);
-        printf("2- LOGUEARSE COMO EMPLEADO.\n");
-        ///imprimirTecho(ANCHO);
+        imprimirTecho(ANCHO);
+        contarTitulo("SISTEMA DE GESTION POWERSOFT");
+        imprimirTecho(ANCHO);
+        contarTitulo("INGRESE EL NUMERO DEL USUARIO CON EL QUE SE QUIERE LOGUEAR");
+        imprimirTecho(ANCHO);
+        contarTitulo("1- LOGUARSE COMO ADMIN.");
+        imprimirTecho(ANCHO);
+        contarTitulo("2- LOGUEARSE COMO EMPLEADO.");
+        imprimirTecho(ANCHO);
         scanf("%i", &eleccionLogueo);
         system("cls");
         switch(eleccionLogueo)
         {
         case 1:
-            printf("LOGUEO DE ADMIN\n");
-            printf("INGRESE NOMBRE DE USUARIO: \n");
+            contarTitulo("LOGUEO DE ADMIN");
+            contarTitulo("INGRESE NOMBRE DE USUARIO: ");
             scanf("%s", &verificarUsu);
+            imprimirTecho(ANCHO);
 
             if(strcmp(verificarUsu, usuAdmin) == 0 )
             {
-
-            printf("Usuario logueado ok.\n");
-            printf("ELIJA UNA OPCION:\n");
-            printf("1- ALTA DE EMPLEADO.\n");
-            printf("2- BAJA DE EMPLEADO.\n");
-            printf("3- MODIFICACION DE EMPLEADO.\n");
-            printf("4- CONSULTA DE EMPLEADO.\n");
+            system("cls");
+            contarTitulo("Usuario logueado ok.");
+            contarTitulo("ELIJA UNA OPCION:");
+            contarTitulo("1- ALTA DE EMPLEADO.");
+            contarTitulo("2- BAJA DE EMPLEADO.");
+            contarTitulo("3- MODIFICACION DE EMPLEADO.");
+            contarTitulo("4- CONSULTA DE EMPLEADO.");
             scanf("%i", &eleccionOpcion);
             }
             else
             {
-                printf("usuario no existe o incorrecto.");
+                contarTitulo("usuario no existe o incorrecto.");
             }
 
 
@@ -67,7 +68,7 @@ int main()
 
             case 1:
 
-                printf("1- ALTA DE EMPLEADO.\n");
+                contarTitulo("1- ALTA DE EMPLEADO.");
                 cargarArchivoEmpleado(ARCHI_EMPLEADOS);
                 system("cls");
                 mostrarArchivoEmpleado(ARCHI_EMPLEADOS);
@@ -77,30 +78,30 @@ int main()
 
             default:
 
-                printf(" OPCION NO DISPONILE O INCORRECTA.\n");
+                contarTitulo(" OPCION NO DISPONILE O INCORRECTA.");
 
 
             }
             break;
 
         case 2:
-            printf("LOGUEO DE EMPLEADO\n");
-            printf("INGRESE NOMBRE DE USUARIO: \n");
+            contarTitulo("LOGUEO DE EMPLEADO");
+            contarTitulo("INGRESE NOMBRE DE USUARIO: ");
             scanf("%s", &verificarUsu);
 
             if(strcmp(verificarUsu, usuEmpleado1) == 0 || strcmp(verificarUsu, usuEmpleado2) == 0 || strcmp(verificarUsu, usuEmpleado3) == 0 || strcmp(verificarUsu, usuEmpleado4) == 0)
             {
-                printf("Usuario logueado ok.");
+                contarTitulo("Usuario logueado ok.");
             }
             else
             {
-                printf("usuario no existe o incorrecto.");
+                contarTitulo("usuario no existe o incorrecto.");
             }
 
             break;
 
         default:
-            printf(" OPCION NO DISPONILE O INCORRECTA.\n");
+            contarTitulo(" OPCION NO DISPONILE O INCORRECTA.\n");
 
         }
         ///printf("QUIERE VER OTRO EJERCICIO?\n");

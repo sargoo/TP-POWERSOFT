@@ -1,7 +1,5 @@
 #include "stEmpleados.h"
 #define ESC 27
-#define ANCHO 118
-#define DIM 50
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
@@ -46,6 +44,7 @@ int cargarEmpleados (stEmpleado e[], int dim)
         opcion = getch();
         system("cls");
     }
+    return i;
 }
 
 void mostrarUnEmpleado(stEmpleado e)

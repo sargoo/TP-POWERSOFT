@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1654414256 source:c:\users\gonzaa\desktop\tp-powersoft-main\centrartitulos.c
+	"centrarTitulos.h"
+
+1654414256 c:\users\gonzaa\desktop\tp-powersoft-main\centrartitulos.h
+
+1654414256 source:c:\users\gonzaa\desktop\tp-powersoft-main\stempleados.c
+	"stEmpleados.h"
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1654414256 c:\users\gonzaa\desktop\tp-powersoft-main\stempleados.h
+
+1654560143 source:c:\users\gonzaa\desktop\tp-powersoft-main\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"centrarTitulos.h"
+	"stEmpleados.h"
+
