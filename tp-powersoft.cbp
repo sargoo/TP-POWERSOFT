@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="centrarTitulos.h" />
+		<Unit filename="funcionesMenus.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funcionesMenus.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -42,6 +46,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="stClientes.h" />
+		<Unit filename="stConsumos.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="stConsumos.h" />
 		<Unit filename="stEmpleados.c">
 			<Option compilerVar="CC" />

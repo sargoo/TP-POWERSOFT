@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <string.h>
+#define archiCliente "ARCHIVO_CLIENTE.DAT"
 
 
 stCliente cargaCliente()
@@ -73,4 +74,55 @@ void muestraListadoDeClientes(stCliente c[], int v)
     {
         muestraUnCliente(c[i]);
     }
+}
+
+void cargarArchivoCliente(char nombreArchivo[])
+{
+    FILE *archiCliente = fopen(nombreArchivo, "ab");
+    stCliente c;
+    char opcion;
+    int id = 0;
+
+    if(archi)
+    {
+        id = incrementarIdCliente(archiCliente);
+        do
+        {
+            id ++;
+            c = cargaCliente();
+            fwrite(&c,sizeof(stCliente), 1, archiCliente);
+            contarTitulo("SEGUIR CARGANDO CLIENTES?");
+            contarTitulo("ESC PARA SALIR O CUALQ. TECLA PARA CONTINUAR");
+            printf("\n\t\t\t\t\t\t\t\t");
+            opcion = getch();
+            system("cls");        }
+        while(opcion!=ESC);
+    }
+    else
+    {
+        printf("No se pudo abrir el archivo.");
+
+    }
+    fclose(archi);
+}
+
+int incrementarIdCliente (char nombreArchivo[])
+{
+    int id = 0;
+
+    stEmpleado e;
+
+    FILE *archiEmpleados = fopen(nombreArchivo, "rb");
+
+    if(archiEmpleados)
+    {
+        fseek(archiEmpleados, -1 * sizeof(archiEmpleados),SEEK_END);
+        if(fread(&e, sizeof(stEmpleado),1, archiEmpleados) > 0)
+        {
+            id = e.id;
+        }
+    }
+    fclose(archiEmpleados);
+
+    return id;
 }

@@ -19,5 +19,5 @@ stCliente cargaCliente();
 void muestraUnCliente(stCliente c);
 int cargaListadoDeClientes(stCliente c[], int DIM);
 void muestraListadoDeClientes(stCliente c[], int v);
-
+void cargarArchivoCliente(char nombreArchivo[]);
 #endif // STCLIENTES_H_INCLUDED

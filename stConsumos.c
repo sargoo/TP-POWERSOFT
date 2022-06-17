@@ -70,3 +70,4 @@ void muestraArchivoConsumos(char nombreArchivo[])
         fclose(Consumos);
     }
 }
+
