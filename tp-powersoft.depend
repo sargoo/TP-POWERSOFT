@@ -1,32 +1,33 @@
 # depslib dependency file v1.0
-1654414256 source:c:\users\gonzaa\desktop\tp-powersoft-main\centrartitulos.c
+1655507506 source:c:\users\gonzaa\desktop\tp-powersoft-main\centrartitulos.c
 	"centrarTitulos.h"
 
 1654414256 c:\users\gonzaa\desktop\tp-powersoft-main\centrartitulos.h
 
-1655022821 source:c:\users\gonzaa\desktop\tp-powersoft-main\stempleados.c
+1655499903 source:c:\users\gonzaa\desktop\tp-powersoft-main\stempleados.c
 	"stEmpleados.h"
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	<string.h>
 
-1654890822 c:\users\gonzaa\desktop\tp-powersoft-main\stempleados.h
+1655070488 c:\users\gonzaa\desktop\tp-powersoft-main\stempleados.h
 
-1655070489 source:c:\users\gonzaa\desktop\tp-powersoft-main\main.c
+1655501250 source:c:\users\gonzaa\desktop\tp-powersoft-main\main.c
 	<stdio.h>
 	<stdlib.h>
+	"funcionesMenus.h"
 
-1654568049 source:c:\users\gonzaa\desktop\tp-powersoft-main\stclientes.c
+1655499710 source:c:\users\gonzaa\desktop\tp-powersoft-main\stclientes.c
 	"stClientes.h"
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	<string.h>
 
-1654568052 c:\users\gonzaa\desktop\tp-powersoft-main\stclientes.h
+1655070486 c:\users\gonzaa\desktop\tp-powersoft-main\stclientes.h
 
-1655166244 source:c:\users\gonzaa\desktop\tp-powersoft-main\funcionesmenus.c
+1655507995 source:c:\users\gonzaa\desktop\tp-powersoft-main\funcionesmenus.c
 	"funcionesMenus.h"
 	"centrarTitulos.h"
 	<stdio.h>
@@ -34,7 +35,7 @@
 	<conio.h>
 	<string.h>
 
-1655030869 c:\users\gonzaa\desktop\tp-powersoft-main\funcionesmenus.h
+1655501719 c:\users\gonzaa\desktop\tp-powersoft-main\funcionesmenus.h
 
 1655070489 source:c:\users\gonzaa\desktop\tp-powersoft-main\stconsumos.c
 	"stConsumos.h"

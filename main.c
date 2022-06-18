@@ -6,13 +6,11 @@
 
 int main()
 {
-    int opcion = 0;
+    int seguir = 0;
 
-    while (opcion != ESC)
+    while (seguir != ESC)
     {
-
         mostrarMenuLogueo();
-
     }
 
     return 0;

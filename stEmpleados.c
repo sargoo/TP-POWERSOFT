@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <string.h>
-#define archiEMpleados "ARCHIVO_EMPLEADO.DAT"
+#define archivoEmpleados "ARCHIVO_EMPLEADO.DAT"
 
 
 stEmpleado cargarUnEmpleado()
@@ -70,18 +70,18 @@ void mostrarEmpleados(stEmpleado e[], int v)
 void cargarArchivoEmpleado(char nombreArchivo[])
 {
     FILE *archiEMpleados = fopen(nombreArchivo, "ab");
-    stEmpleado empleado;
+    stEmpleado e;
     char opcion;
     int id = 0;
 
-    if(archi)
+    if(archiEMpleados)
     {
         id = incrementarIdEmpleado(archiEMpleados);
         do
         {
             id ++;
-            empleado = cargarUnEmpleado();
-            fwrite(&empleado,sizeof(stEmpleado), 1, archi);
+            e = cargarUnEmpleado();
+            fwrite(&e,sizeof(stEmpleado), 1, archiEMpleados);
             contarTitulo("SEGUIR CARGANDO EMPLEADOS?");
             contarTitulo("ESC PARA SALIR O CUALQ. TECLA PARA CONTINUAR");
             printf("\n\t\t\t\t\t\t\t\t");
@@ -94,21 +94,21 @@ void cargarArchivoEmpleado(char nombreArchivo[])
         printf("No se pudo abrir el archivo.");
 
     }
-    fclose(archi);
+    fclose(archiEMpleados);
 }
 
 void mostrarArchivoEmpleado(char nombreArchivo[])
 {
-     FILE *archi = fopen(nombreArchivo, "rb");
+     FILE *archiEMpleados = fopen(nombreArchivo, "rb");
      stEmpleado e;
 
-     if(archi)
+     if(archiEMpleados)
      {
-        while(fread(&e,sizeof(stEmpleado), 1, archi)> 0)
+        while(fread(&e,sizeof(stEmpleado), 1, archiEMpleados)> 0)
         {
             mostrarUnEmpleado(e);
         }
-        fclose(archi);
+        fclose(archiEMpleados);
      }
 }
 
@@ -141,13 +141,13 @@ void buscarporDatosInt(char nombreArchivo[], int dato)
     FILE *archiEmpleados = fopen(nombreArchivo,"rb");
     stEmpleado e;
 
-    if (archiEMpleados)
+    if (archiEmpleados)
     {
-        while(fread(&e,sizeof(stEmpleado), 1, archiEMpleados) > 0 && e.estado == dato)
+        while(fread(&e,sizeof(stEmpleado), 1, archiEmpleados) > 0 && e.estado == dato)
         {
             mostrarUnEmpleado(e);
         }
-        fclose(archiEMpleados);
+        fclose(archiEmpleados);
     }
 
 }
